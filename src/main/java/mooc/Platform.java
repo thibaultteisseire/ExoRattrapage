@@ -11,8 +11,13 @@ public class Platform {
 	 * Ajoute un cours à la liste de cours dispensés
 	 * @param c le cours à ajouter (non null)
 	 */
+        private List<Course> courses = new ArrayList<Course>();
+        
 	public void addCourse(Course c) {
-		throw new UnsupportedOperationException("Pas encore implémenté");
+            if (c == null) {
+                return;
+            }
+            courses.add(c);
 	}
 
 	/**
@@ -33,8 +38,9 @@ public class Platform {
 	 * Inscrire un étudiant à l'université
 	 * @param s  l'étudiant à inscrire (non null)
 	 */
+        
 	public void registerStudent(Person s) {
-		throw new UnsupportedOperationException("Pas encore implémenté");
+            
 	}
 
 	/**
@@ -81,7 +87,12 @@ public class Platform {
 	 * ou si l'étudiant n'a pas encore de note à ce cours
 	 */
 	public int getMark(Person s, Course c) throws Exception {
-		throw new UnsupportedOperationException("Pas encore implémenté");
+		System.out.println("Enter the gradePoint for each of the subjects (1-10)");
+		for(String x : s)
+		{
+			System.out.println(x + " : ");
+			mark.add(setMark.nextInt());
+		}
 	}
 
 	/**
