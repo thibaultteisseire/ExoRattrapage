@@ -88,12 +88,6 @@ public class Platform {
 	 * ou si l'étudiant n'a pas encore de note à ce cours
 	 */
 	public int getMark(Person s, Course c) throws Exception {
-		System.out.println("Enter the gradePoint for each of the subjects (1-10)");
-		for(String x : s)
-		{
-			System.out.println(x + " : ");
-			mark.add(setMark.nextInt());
-		}
 	}
 
 	/**
