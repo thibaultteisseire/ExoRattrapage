@@ -12,6 +12,7 @@ public class Platform {
 	 * @param c le cours à ajouter (non null)
 	 */
         private List<Course> courses = new ArrayList<Course>();
+        private List<Person> persons = new ArrayList<Person>();
         
 	public void addCourse(Course c) {
             if (c == null) {
@@ -23,15 +24,15 @@ public class Platform {
 	/**
 	 * @return les étudiants inscrits à l'université
 	 */
-	public Set<Person> students() {
-		throw new UnsupportedOperationException("Pas encore implémenté");
+	public List<Person> students() {
+		return persons;
 	}
 
 	/**
 	 * @return les cours dispensés par l'université
 	 */
-	public Set<Course> courses() {
-		throw new UnsupportedOperationException("Pas encore implémenté");
+	public List<Course> courses() {
+		return courses;
 	}
 
 	/**
@@ -40,7 +41,7 @@ public class Platform {
 	 */
         
 	public void registerStudent(Person s) {
-            
+            Person persons1 = new Person();
 	}
 
 	/**
@@ -119,5 +120,25 @@ public class Platform {
 	public Set<Course> emptyCourses() {
 		throw new UnsupportedOperationException("Pas encore implémenté");
 	}
+        
+        public void deleteStudent(Person persons1) {
+		for(int i=0; i<persons.length; i++) {
+			if(persons[i].equals(persons1)) {
+				persons[i] = null;
+				return true;
+			}
+		}
+		persons.remove(persons1);
+	}
+        
+        public void deleteCourse(Course c) { 
+		if (c.deleteStudent(persons1)) {
+			for(int i=0; i<courses.length; i++) {
+				if(courses[i] == c)
+					courses[i] = null;
+			}
+                        return true;
+		}
+                else courses.remove(c);
 
 }
